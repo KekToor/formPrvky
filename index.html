@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formuláře</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+    <h1 class="text-center sixem jumbotron fixed-top">Převody měn</h1>
+    <div class="container text-center twoem">
+            <div class="form-group col-sm-6">
+                <div class="row">
+                    <p>
+                        <form style="float: left;">
+                            <label for="hodnota">Původní měna:</label>
+                            <input type="text" class="form-control" name="Currency" id="moznosti" aria-describedby="helpId" placeholder="">
+                                <select class="form-control" name="currencies" id="meny">
+                                    <option value="1">CZK</option>
+                                    <option value="2">USD</option>
+                                    <option value="3">EUR</option>
+                                    <option value="4">PLN</option>
+                                    <option value="5">GBP</option>
+                                    <option value="6">RUB</option>
+                                </select>
+                        </form>
+                    </p>
+                </div>
+                <div class="row">
+                    <p>
+                        <form style="float: left;">
+                            <label for="hodnota">Převést na:</label>
+                                <select class="form-control" name="currencies" id="meny2">
+                                    <option value="1">CZK</option>
+                                    <option value="2">USD</option>
+                                    <option value="3">EUR</option>
+                                    <option value="4">PLN</option>
+                                    <option value="5">GBP</option>
+                                    <option value="6">RUB</option>
+                                </select>
+                                <p>
+                                    <button type="button" class="btn btn-primary" id="vypocetMeny" style="margin-top: 2%;">Vypočítat</button>
+                                </p>
+                        </form>
+                    </p>
+                </div>
+            </div>    
+            <div class="row" id="vypis">
+
+            </div>
+    </div>
+    <footer class="footer paddingX bg-black text-wh text-center">
+        Tomáš Fryčka, 2020
+    </footer>
+    </div>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
