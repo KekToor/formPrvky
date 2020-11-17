@@ -1,5 +1,4 @@
 const tlacitko = document.getElementById('vypocetMeny')
-tlacitko.addEventListener('click',function(){
 tlacitko.addEventListener('click', function () {
     let options = parseFloat(document.getElementById('moznosti').value);
     let cur = parseFloat(document.getElementById('meny').value);
@@ -7,59 +6,41 @@ tlacitko.addEventListener('click', function () {
     console.log(options);
     console.log(cur);
     console.log(cur2);
-    function vypocetPrevodu(value, o1, o2){
     function vypocetPrevodu(value, o1, o2) {
         console.log(o1);
         console.log(o2);
-        switch(o1){
         switch (o1) {
             case 1:
-                switch(o2){
                 switch (o2) {
                     case 1:
-                        return(value);
                         return (value);
                     case 2:
-                        return((value / 22.34).toFixed(2)); 
                         return ((value / 22.34).toFixed(2));
                     case 3:
-                        return((value / 26.52).toFixed(2));  
                         return ((value / 26.52).toFixed(2));
                     case 4:
-                        return((value / 5.90).toFixed(2));   
                         return ((value / 5.90).toFixed(2));
                     case 5:
-                        return((value / 29.61).toFixed(2));  
                         return ((value / 29.61).toFixed(2));
                     case 6:
-                        return((value * 3.42).toFixed(2));  
                         return ((value * 3.42).toFixed(2));
                 }
             case 2:
-                switch(o2){
                 switch (o2) {
                     case 1:
-                        return(value * 22.34);
                         return ((value * 22.34).toFixed(2));
                     case 2:
-                        return(value); 
                         return (value);
                     case 3:
-                        return((value * 0.84).toFixed(2));  
                         return ((value * 0.84).toFixed(2));
                     case 4:
-                        return((value * 3.78).toFixed(2));   
                         return ((value * 3.78).toFixed(2));
                     case 5:
-                        return((value * 0.75).toFixed(2));  
                         return ((value * 0.75).toFixed(2));
                     case 6:
-                        return((value * 76.27).toFixed(2));  
-                }    
                         return ((value * 76.27).toFixed(2));
                 }
             case 3:
-                switch(o2){
                 switch (o2) {
                     case 1:
                         return ((value * 26.52).toFixed(2));
@@ -77,23 +58,16 @@ tlacitko.addEventListener('click', function () {
             case 4:
                 switch (o2) {
                     case 1:
-                        return(value * 26.52);
                         return ((value * 5.90).toFixed(2));
                     case 2:
-                        return((value / 0.84).toFixed(2)); 
                         return ((value / 3.79).toFixed(2));
                     case 3:
-                        return (value);  
                         return ((value / 4.49).toFixed(2));
                     case 4:
-                        return((value * 4.49).toFixed(2));   
                         return (value);
                     case 5:
-                        return((value * 0.9).toFixed(2));  
                         return ((value / 5.02).toFixed(2));
                     case 6:
-                        return((value * 76.27).toFixed(2));  
-                    }    
                         return ((value * 20.14).toFixed(2));
                 }
             case 5:
@@ -130,8 +104,26 @@ tlacitko.addEventListener('click', function () {
                 return 0;
         }
     }
-    let res = vypocetPrevodu(options,cur,cur2);
+    function pouzitaMena (value){
+        switch(value){
+            case 1:
+                return "CZK";
+            case 2:
+                return "USD";
+            case 3:
+                return "EUR";
+            case 4:
+                return "PLN";
+            case 5:
+                return "GBP";
+            case 6:
+                return "RUB";
+        }
+    }
     let res = vypocetPrevodu(options, cur, cur2);
     console.log(res);
+    let m1 = pouzitaMena(cur);
+    let m2 = pouzitaMena(cur2);
     let vypis = document.getElementById('vypis');
-    vypis.innerHTML = `${res}`;
+    vypis.innerHTML = `${options} ${m1} je ${res} ${m2}.`;
+});
